@@ -7,7 +7,8 @@
 
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    background-color: #f3f4f6; /* 薄いグレーの背景 */
+    /* 背景を薄い青色に変更 */
+    background-color: #e6f0f9; 
     color: #333;
     display: flex;
     justify-content: center;
@@ -16,30 +17,37 @@ body {
     padding: 20px;
 }
 
-/* カード本体のデザイン */
+/* カード本体 */
 .card {
     background-color: #ffffff;
     width: 100%;
-    max-width: 400px; /* PCで見ても幅が広がりすぎないようにする */
+    max-width: 420px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* headerの背景色が角丸からはみ出ないようにする */
+    overflow: hidden; 
     text-align: center;
 }
 
-/* プロフィール画像 */
+/* === 上部：青背景エリア === */
+.card-header {
+    background-color: #1e293b; /* 引き締まった濃い青（ネイビー系） */
+    color: #ffffff;
+    padding: 40px 30px 25px;
+}
+
 .profile-img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* 完全な円にする */
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #e5e7eb;
+    margin-bottom: 15px;
+    /* 暗い背景に映えるように少しだけ白いフチをつける */
+    border: 3px solid rgba(255, 255, 255, 0.2); 
 }
 
-/* 名前 */
 .name-jp {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     margin-bottom: 5px;
     letter-spacing: 1px;
@@ -47,34 +55,48 @@ body {
 
 .name-en {
     font-size: 14px;
-    color: #6b7280;
-    margin-bottom: 25px;
+    color: #94a3b8; /* 少し落ち着いた水色グレー */
+    margin-bottom: 15px;
 }
 
-/* 所属・連絡先情報 */
+.major {
+    font-weight: bold;
+    font-size: 15px;
+    color: #e2e8f0;
+}
+
+/* === 下部：白背景エリア === */
+.card-body {
+    padding: 30px 30px 40px;
+}
+
 .info-section {
     margin-bottom: 30px;
     font-size: 14px;
     line-height: 1.6;
 }
 
-.academic {
-    margin-bottom: 15px;
+.affiliation {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 500;
 }
 
-.major {
-    font-weight: bold;
-    color: #4f46e5; /* 専攻を少し目立たせる色 */
+.contact-info {
+    display: inline-block;
+    text-align: left; /* アイコンを綺麗に揃えるため左寄せ */
 }
 
 .contact-info p {
     color: #4b5563;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .contact-info i {
     width: 20px;
-    color: #9ca3af;
+    color: #6b7280;
+    text-align: center;
+    margin-right: 5px;
 }
 
 .contact-info a {
@@ -85,11 +107,12 @@ body {
     text-decoration: underline;
 }
 
-/* リンクボタンの共通デザイン */
+/* === リンクボタンエリア === */
 .link-section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* ボタンとボタンの隙間 */
+    display: grid;
+    /* 1枚目のように2列に並べる魔法のコード */
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
 }
 
 .link-btn {
@@ -97,25 +120,51 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 14px;
-    border-radius: 10px;
+    padding: 12px 10px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
+    color: #ffffff; /* ボタンの文字はすべて白 */
     transition: all 0.2s ease;
-    border: 1px solid #e5e7eb;
-    color: #374151;
-    background-color: #ffffff;
 }
 
 .link-btn i {
-    margin-right: 10px;
+    margin-right: 8px;
     font-size: 18px;
 }
 
-/* ボタンにカーソルを乗せた時の動き */
 .link-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #f9fafb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+}
+
+/* 各SNSのブランドカラー設定 */
+.github {
+    background-color: #2b3137;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.x-twitter {
+    /* 漆黒（#000000）からチャコールグレー（#1a1e22）へのグラデーション */
+    background: radial-gradient(circle at center, #1a1e22 0%, #000000 100%);
+}
+
+.instagram {
+    /* インスタ風のグラデーション */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Wantedlyのブランドカラー（爽やかな水色） */
+.wantedly {
+    background-color: #00c0c7; 
+}
+
+/* 5つのボタンを綺麗に配置する魔法（最後の要素だけ全幅にする） */
+.link-section > a:last-child {
+    grid-column: 1 / -1; 
 }
