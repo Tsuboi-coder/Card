@@ -1,0 +1,121 @@
+/* 全体のリセットと基本設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: #f3f4f6; /* 薄いグレーの背景 */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* カード本体のデザイン */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px; /* PCで見ても幅が広がりすぎないようにする */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 40px 30px;
+    text-align: center;
+}
+
+/* プロフィール画像 */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* 完全な円にする */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #e5e7eb;
+}
+
+/* 名前 */
+.name-jp {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.name-en {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+/* 所属・連絡先情報 */
+.info-section {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.academic {
+    margin-bottom: 15px;
+}
+
+.major {
+    font-weight: bold;
+    color: #4f46e5; /* 専攻を少し目立たせる色 */
+}
+
+.contact-info p {
+    color: #4b5563;
+    margin-bottom: 5px;
+}
+
+.contact-info i {
+    width: 20px;
+    color: #9ca3af;
+}
+
+.contact-info a {
+    color: #4b5563;
+    text-decoration: none;
+}
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* リンクボタンの共通デザイン */
+.link-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* ボタンとボタンの隙間 */
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    background-color: #ffffff;
+}
+
+.link-btn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* ボタンにカーソルを乗せた時の動き */
+.link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f9fafb;
+}
